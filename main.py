@@ -28,7 +28,7 @@ class Ui_MainWindow(QMainWindow, Ui_MainWindow):
 
   def getText(self):
         # return list
-        return self.textField.toPlainText().split()
+        return self.textField.toPlainText().split('\n')
 
   def convertText(self):
       listText = self.getText()
