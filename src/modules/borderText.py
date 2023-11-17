@@ -11,27 +11,37 @@ class borderText:
   def setAppropriateCharacterLengthHorizontally(self):
     maxLength = max([len(text) for text in self.innerText])
     self.lengthCharacterHorizontally = maxLength + 4
+  
+  def autoFillBlank(self, text):
+    # Optimization
+    textLength = len(text)
+    return text + ' ' *(self.lengthCharacterHorizontally-4-len(text))
 
   def draw(self):
     self.outputText = ""
     innerTextLength = len(self.innerText)
     for i in range(-1, innerTextLength+1):
-      self.outputText += "\n"
+      # self.outputText += "\n"
       lengthCharacterHorizontally = self.lengthCharacterHorizontally-2
-      borderTop = f"+{'='*(lengthCharacterHorizontally)}+"
+      borderHorizontal = f"+{'='*(lengthCharacterHorizontally)}+"
       blankSpace = f"|{' '*(lengthCharacterHorizontally)}|"
       if i == -1:
-        self.outputText += borderTop + "\n"
+        self.outputText += borderHorizontal + "\n"
         self.outputText += blankSpace
       elif i == innerTextLength:
         self.outputText += blankSpace + "\n"
-        self.outputText += borderTop
+        self.outputText += borderHorizontal
       else:
         iText = self.innerText[i]
+
+        # auto fill blank character
+        iText = self.autoFillBlank(iText)
+
         startNumberOfSpace, finalNumberOfSpace = self.determineNumberOfSpace(availableSpaceColumn = lengthCharacterHorizontally, textLength = len(iText))
         self.outputText += f"|{' '*startNumberOfSpace}{iText}{' '*finalNumberOfSpace}|"
+      self.outputText += "\n"
     
-    self.outputText += "\n\n"
+    # self.outputText += "\n\n"
     print(self.outputText)
 
   def saveText(self, output_file_path):
