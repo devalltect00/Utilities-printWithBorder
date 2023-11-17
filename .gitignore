@@ -1,0 +1,75 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Compiled PyQt5 UI files
+*.ui.py
+
+# PyQt5 generated files
+*.pro.user
+*.pro.user.*
+*.qrc.py
+
+# PyInstaller
+/dist/
+/build/
+/*.spec
+
+# Virtual environment
+venv/
+env/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Spyder settings
+.spyderproject
+.spyproject
+
+# PyCharm settings
+.idea/
+
+# VS Code settings
+.vscode/
+
+# Eclipse settings
+.settings/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# Compiled Python files
+*.pyc
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# IntelliJ
+*.iml
+.idea/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+Desktop.ini

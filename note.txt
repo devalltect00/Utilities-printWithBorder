@@ -1,0 +1,13 @@
+from 
+QT Designer
+
+.ui to .py
+
+# convert '.ui' file' into '.py' file
+pyuic5 -x UI/printWithBorder.ui -o main.py
+
+# make executable files(windows)
+pyinstaller --onefile main.py
+
+# install requirements
+pip install -r requirements.txt
